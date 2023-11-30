@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:@localhost:3306/ad"
+}
+
+
+
+
+
+
+
+
+
+
+
+// model Item {
+//   id             Int      @id @default(autoincrement())
+//   title          String
+//   startDate      DateTime     @default(now()) @db.Date
+//   endDate        DateTime     @default(now()) @db.Date
+//   siteLink       String
+//   timeLimit      String
+//   description    String
+//   remarks        String
+//   needProof      Boolean
+//   siteLinkHidden String
+// }
+
+// model Post {
+//   id             Int      @id @default(autoincrement())
+//   title          String
+//   startDate      DateTime
+//   endDate        DateTime
+//   siteLink       String
+//   timeLimit      String
+//   description    String
+//   remarks        String?
+//   needProof      Boolean
+//   siteLinkHidden Boolean
+// }
+
+
+
+// model Post {
+//   id             Int      @id @default(autoincrement())
+//   title          String
+//   startDate      DateTime @db.Date
+//   endDate        DateTime @db.Date
+//   siteLink       String
+//   timeLimit      String
+//   description    String
+//   remarks        String?
+//   needProof      Boolean
+//   siteLinkHidden Boolean
+// }
+
+
+model Post {
+  id             Int      @id @default(autoincrement())
+  title          String
+  startDate      DateTime @db.Date
+  endDate        DateTime @db.Date
+  siteLink       String
+  hasTimeLimit   Boolean
+  timeLimitValue String?
+  description    String
+  remarks        String?
+  needProof      Boolean
+  siteLinkHidden Boolean
+}
